@@ -1,0 +1,49 @@
+html 
+    head 
+        title Contact 
+    body 
+        include bootstrap.html
+        include header.pug
+        .container
+            h1.text-center Contact us
+            if status
+                div(class="alert alert-success" role="alert")
+                    msg
+            form(method='post' action='data')
+                .mb-3
+                    label.form-label(for='exampleInputEmail1') Full Name
+                    input#exampleInputEmail1.form-control(name='name' type='text' aria-describedby='emailHelp')
+                    if nameErr
+                        p(class="text-danger") 
+                            | #{nameErr}
+                .mb-3
+                    label.form-label(for='exampleInputEmail1') Email address
+                    input#exampleInputEmail1.form-control(name='email' type='email' aria-describedby='emailHelp')
+                    if emailErr
+                        p(class="text-danger") 
+                            | #{emailErr}
+                .mb-3
+                    label.form-label(for='exampleInputPassword1') Password
+                    input#exampleInputPassword1.form-control(name='pass' type='password')
+                    if passErr
+                        p(class="text-danger") 
+                            | #{passErr}
+                .mb-3
+                    label.form-label(for='exampleInputPassword1') Age
+                    input#exampleInputPassword1.form-control(name='age' type='text')
+                    if ageErr
+                        p(class="text-danger") 
+                            | #{ageErr}
+                .mb-3
+                    label.form-label(for='exampleInputPassword1') City
+                    input#exampleInputPassword1.form-control(name='city' type='text')
+                    if cityErr
+                        p(class="text-danger") 
+                            | #{cityErr}
+                .mb-3
+                    label.form-label(for='exampleInputPassword1') Mobile
+                    input#exampleInputPassword1.form-control(name='mobile' type='text')
+                    if mobileErr
+                        p(class="text-danger") 
+                            | #{mobileErr}
+                button.btn.btn-primary(type='submit') Submit
